@@ -6,6 +6,7 @@ class Dimens {
   static const double font_14 = 14;
   static const double font_16 = 16;
   static const double font_18 = 18;
+  static const double font_24 = 24;
 
   static const double distance_horizontal_padding = 18;
 }

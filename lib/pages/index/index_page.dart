@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_architecture/components/switch_image.dart';
 import 'package:flutter_architecture/pages/home/home_page.dart';
 import 'package:flutter_architecture/pages/mine/mine_page.dart';
-import 'package:flutter_architecture/pages/order/order_page.dart';
+import 'package:flutter_architecture/pages/order/order_list_page.dart';
 import 'package:flutter_architecture/res/clrs.dart';
 import 'package:flutter_architecture/res/dimens.dart';
 import 'package:flutter_architecture/utils/image_utils.dart';
@@ -28,7 +28,7 @@ class _IndexPageState extends State<IndexPage> {
     ImageUtils.assetImage('index_mine_unselected'),
   ]);
 
-  final _pageList = List.of([HomePage(), OrderPage(), MinePage()]);
+  final _pageList = List.of([HomePage(), OrderListPage(), MinePage()]);
 
   var _index = 0;
 

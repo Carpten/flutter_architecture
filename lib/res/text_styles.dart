@@ -68,6 +68,11 @@ class TextStyles {
     color: Colors.white,
   );
 
+  static const TextStyle white_16 = const TextStyle(
+    fontSize: Dimens.font_16,
+    color: Colors.white,
+  );
+
   static const TextStyle blue_11 = const TextStyle(
     fontSize: Dimens.font_11,
     color: Clrs.textBlue,
