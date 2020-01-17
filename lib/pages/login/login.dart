@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_architecture/components/ICheckbox.dart';
 import 'package:flutter_architecture/res/clrs.dart';
 import 'package:flutter_architecture/res/text_styles.dart';
 import 'package:flutter_architecture/res/themes.dart';
@@ -14,9 +15,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool _rememberPassword = false;
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size);
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -45,25 +46,15 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              SizedBox(height: 27),
+              SizedBox(height: 12),
               Row(
                 children: <Widget>[
-                  SizedBox(width: 40),
-                  Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2),
-                          shape: BoxShape.rectangle,
-                          color: Colors.blue),
-                      child: Padding(
-                        padding: const EdgeInsets.all(0),
-                        child: Icon(
-                          Icons.check,
-                          size: 14,
-                          color: Colors.white,
-                        ),
-                      )),
-                      SizedBox(width: 8),
-                  Text('记住密码', style: TextStyles.black_12),
+                  SizedBox(width: 24),
+                  ICheckbox(
+                    value: _rememberPassword,
+                    onChanged: (isChecked) => this.setState((){_rememberPassword=isChecked;}),
+                    hintText: '记住密码',
+                  )
                 ],
               )
             ],
@@ -101,11 +92,11 @@ class _LoginState extends State<Login> {
                 hintText: type == 0 ? '请输入手机号' : '请输入密码',
                 focusedBorder: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(1),
-                    borderSide: BorderSide(color: Clrs.textBlack, width: 1)),
+                    borderSide: BorderSide(color: Clrs.textBlack, width: 1.5)),
                 enabledBorder: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(1),
                     borderSide:
-                        BorderSide(color: Clrs.textBlackLight, width: 1)),
+                        BorderSide(color: Clrs.textBlackLight, width: 1.5)),
               ),
             ),
             Positioned(
