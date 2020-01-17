@@ -4,19 +4,19 @@ import 'package:flutter_architecture/res/clrs.dart';
 import 'package:flutter_architecture/res/dimens.dart';
 import 'package:flutter_architecture/utils/image_utils.dart';
 
-class Index extends StatefulWidget {
+class IndexPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _IndexState();
+    return _IndexPageState();
   }
 }
 
-class _IndexState extends State<Index> {
+class _IndexPageState extends State<IndexPage> {
   final _bottomNavigationBarTitles = List.of(['收款',  '订单', '我的']);
   final _bottomNavigationBarSelectedIcons = List.of([
-    ImageUtils.assetImage('index_home_unselected'),
-    ImageUtils.assetImage('index_order_unselected'),
-    ImageUtils.assetImage('index_mine_unselected'),
+    ImageUtils.assetImage('index_home_selected'),
+    ImageUtils.assetImage('index_order_selected'),
+    ImageUtils.assetImage('index_mine_selected'),
   ]);
 
   final _bottomNavigationBarUnselectedIcons = List.of([

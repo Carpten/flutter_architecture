@@ -7,14 +7,14 @@ import 'package:flutter_architecture/res/text_styles.dart';
 import 'package:flutter_architecture/res/themes.dart';
 import 'package:flutter_architecture/utils/image_utils.dart';
 
-class Login extends StatefulWidget {
-  Login({Key key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginPageState extends State<LoginPage> {
   bool _rememberPassword = false;
   @override
   Widget build(BuildContext context) {
