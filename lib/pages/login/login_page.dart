@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_architecture/components/ICheckbox.dart';
+import 'package:flutter_architecture/components/i_checkbox.dart';
 import 'package:flutter_architecture/res/clrs.dart';
 import 'package:flutter_architecture/res/text_styles.dart';
 import 'package:flutter_architecture/res/themes.dart';
