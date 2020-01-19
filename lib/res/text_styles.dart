@@ -30,6 +30,16 @@ class TextStyles {
     color: Clrs.textBlack,
   );
 
+  static const TextStyle black_22 = const TextStyle(
+    fontSize: Dimens.font_22,
+    color: Clrs.textBlack,
+  );
+
+  static const TextStyle black_24 = const TextStyle(
+    fontSize: Dimens.font_24,
+    color: Clrs.textBlack,
+  );
+
   static const TextStyle blackSub_11 = const TextStyle(
     fontSize: Dimens.font_11,
     color: Clrs.textBlackSub,
@@ -55,6 +65,10 @@ class TextStyles {
   );
  static const TextStyle blackLight_16 = const TextStyle(
     fontSize: Dimens.font_16,
+    color: Clrs.textBlackLight,
+  );
+  static const TextStyle blackLight_24 = const TextStyle(
+    fontSize: Dimens.font_24,
     color: Clrs.textBlackLight,
   );
 

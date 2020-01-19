@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_architecture/pages/index/index_page.dart';
-import 'package:flutter_architecture/pages/login/login_page.dart';
 import 'package:flutter_architecture/res/themes.dart';
 
 void main() {
