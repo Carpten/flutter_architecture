@@ -4,7 +4,6 @@ import 'package:flutter_architecture/res/dimens.dart';
 import 'clrs.dart';
 
 class TextStyles {
-
   static const TextStyle black_12 = const TextStyle(
     fontSize: Dimens.font_12,
     color: Clrs.textBlack,
@@ -27,6 +26,10 @@ class TextStyles {
 
   static const TextStyle black_18 = const TextStyle(
     fontSize: Dimens.font_18,
+    color: Clrs.textBlack,
+  );
+  static const TextStyle black_20 = const TextStyle(
+    fontSize: Dimens.font_20,
     color: Clrs.textBlack,
   );
 
@@ -63,7 +66,7 @@ class TextStyles {
     fontSize: Dimens.font_13,
     color: Clrs.textBlackLight,
   );
- static const TextStyle blackLight_16 = const TextStyle(
+  static const TextStyle blackLight_16 = const TextStyle(
     fontSize: Dimens.font_16,
     color: Clrs.textBlackLight,
   );
@@ -79,6 +82,11 @@ class TextStyles {
 
   static const TextStyle white_14 = const TextStyle(
     fontSize: Dimens.font_14,
+    color: Colors.white,
+  );
+
+  static const TextStyle white_15 = const TextStyle(
+    fontSize: Dimens.font_15,
     color: Colors.white,
   );
 

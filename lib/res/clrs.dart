@@ -8,6 +8,8 @@ class Clrs {
   static const Color backgroundColor = Color(0xffF4F4F4);
   static const Color appBarLightBg = Color(0xFFFAFAFA);
   static const Color alphaColorPrimary = Color(0x1C1890FF);
+  static const Color orange = Color(0xFFFFAA29);
+
 
   //分割线
   static const Color divide = Color(0xffDDDDDD);
@@ -21,5 +23,4 @@ class Clrs {
   static const Color textBlack = Color(0xff333333);
   static const Color textBlackSub = Color(0xff888888);
   static const Color textBlackLight = Color(0xffcccccc);
-  
 }

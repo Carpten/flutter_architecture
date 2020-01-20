@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_architecture/components/flex_grid_view.dart';
 import 'package:flutter_architecture/res/clrs.dart';
 import 'package:flutter_architecture/res/text_styles.dart';
 import 'package:flutter_architecture/utils/image_utils.dart';
+import 'package:flutter_architecture/utils/text_style_utils.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -51,6 +53,7 @@ class _HomePageState extends State<HomePage> {
                 height: 0.5,
                 margin: EdgeInsets.symmetric(horizontal: 10)),
             GridView.count(
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 10.0,
@@ -107,61 +110,68 @@ class _HomePageState extends State<HomePage> {
       children: <Widget>[
         Expanded(
             flex: 3,
-            child: Column(children: <Widget>[
-              Expanded(
-                  flex: 1,
-                  child: Row(children: <Widget>[
-                    Expanded(flex: 1, child: _buildKeyboardKeys('1')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('2')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('3'))
-                  ])),
-              SizedBox(height: 8),
-              Expanded(
-                  flex: 1,
-                  child: Row(children: <Widget>[
-                    Expanded(flex: 1, child: _buildKeyboardKeys('4')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('5')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('6'))
-                  ])),
-              SizedBox(height: 8),
-              Expanded(
-                  flex: 1,
-                  child: Row(children: <Widget>[
-                    Expanded(flex: 1, child: _buildKeyboardKeys('7')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('8')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('9'))
-                  ])),
-              SizedBox(height: 8),
-              Expanded(
-                  flex: 1,
-                  child: Row(children: <Widget>[
-                    Expanded(flex: 1, child: _buildKeyboardKeys('.')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('0')),
-                    SizedBox(width: 8),
-                    Expanded(flex: 1, child: _buildKeyboardKeys('del'))
-                  ]))
-            ])),
+            child: FlexGridView(
+              rowCount: 3,
+              columnCount: 4,
+              rowSpacing: 8,
+              columnSpacing: 8,
+              indexedWidgetBuilder: (context, index) => Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(2),
+                      color: Colors.white),
+                  alignment: Alignment.center,
+                  child: _buildKeyboardItem(index)),
+            )),
         SizedBox(width: 8),
         Expanded(
           flex: 1,
-          child: Container(
-            color: Colors.blue,
-          ),
+          child: _buildKeyboardActions(),
         )
       ],
     ));
   }
 
-  Widget _buildKeyboardKeys(String key) {
-    return Container(
-      color: Colors.white
-    );
+  Widget _buildKeyboardItem(int index) {
+    if (index < 9) {
+      return Text((index + 1).toString(), style: TextStyles.black_20);
+    } else if (index == 9) {
+      return Text('.', style: TextStyles.black_20);
+    } else if (index == 10) {
+      return Text('0', style: TextStyles.black_20);
+    } else {
+      return ImageUtils.assetImage('home_keyboard_del');
+    }
+  }
+
+  Widget _buildKeyboardActions() {
+    return Column(children: <Widget>[
+      Expanded(
+        flex: 3,
+        child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(2), color: Clrs.orange),
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: double.infinity,
+            child: Text('会员\n收款',
+                style: TextStyleUtils.merge(TextStyles.white_15,
+                    fontWeight: FontWeight.w700, height: 1.5))),
+      ),
+      SizedBox(height: 8),
+      Expanded(
+        flex: 5,
+        child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(2),
+                color: Clrs.colorPrimary),
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: double.infinity,
+            child: Text('非会员\n收款',
+                textAlign: TextAlign.center,
+                style: TextStyleUtils.merge(TextStyles.white_15,
+                    fontWeight: FontWeight.w700, height: 1.5))),
+      )
+    ]);
   }
 }
