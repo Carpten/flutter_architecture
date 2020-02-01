@@ -35,7 +35,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildGasList() {
     return Container(
-        color: Colors.white,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(2), color: Colors.white),
         child: Column(
           children: <Widget>[
             SizedBox(height: 10),
@@ -83,9 +84,10 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildAmountShowcase() {
     return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(2), color: Colors.white),
       padding: EdgeInsets.only(left: 16, right: 14),
       height: 56,
-      color: Colors.white,
       child: Row(children: <Widget>[
         Text("¥", style: TextStyles.black_18),
         SizedBox(width: 8),

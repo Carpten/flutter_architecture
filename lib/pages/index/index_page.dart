@@ -60,6 +60,7 @@ class _IndexPageState extends State<IndexPage> {
       width: double.infinity,
       height: 54,
       child: BottomNavigationBar(
+        elevation: 0,
         selectedFontSize: Dimens.font_11,
         iconSize: 20,
         unselectedFontSize: Dimens.font_11,
