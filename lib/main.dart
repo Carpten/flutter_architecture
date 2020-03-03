@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_architecture/pages/login/login_page.dart';
 import 'package:flutter_architecture/res/themes.dart';
 import 'package:flutter_architecture/router/route_manager.dart';
 
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: Themes.appTheme,
       onGenerateRoute: RouteManager.buildRouteFactory(),
-      home: LoginPage(),
     );
   }
 }
