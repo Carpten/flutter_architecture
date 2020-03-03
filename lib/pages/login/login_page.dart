@@ -15,6 +15,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _rememberPassword = false;
+
+  void _login() {
+    Navigator.pushNamed(context, '/index');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: RaisedButton(
                   child: Text('确认登录'),
-                  onPressed: () => {},
+                  onPressed: _login,
                   elevation: 0,
                   highlightElevation: 0,
                   color: Clrs.textBlue,
@@ -51,7 +56,9 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(width: 24),
                   ICheckbox(
                     value: _rememberPassword,
-                    onChanged: (isChecked) => this.setState((){_rememberPassword=isChecked;}),
+                    onChanged: (isChecked) => this.setState(() {
+                      _rememberPassword = isChecked;
+                    }),
                     hintText: '记住密码',
                   )
                 ],

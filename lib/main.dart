@@ -1,8 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_architecture/pages/index/index_page.dart';
+import 'package:flutter_architecture/pages/login/login_page.dart';
 import 'package:flutter_architecture/res/themes.dart';
+import 'package:flutter_architecture/router/route_manager.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: Themes.appTheme,
-      home: IndexPage(),
+      onGenerateRoute: RouteManager.buildRouteFactory(),
+      home: LoginPage(),
     );
   }
 }
